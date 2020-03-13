@@ -4,7 +4,9 @@ function request() {
     request.onload = function() {
         if (request.status == 200) {
             var data = JSON.parse(this.response);
-            document.getElementById("price").innerHTML = "$ " + data['bpi']['USD']['rate'];
+            document.getElementById("dolar").innerHTML = data['bpi']['USD']['symbol'] + " " + data['bpi']['USD']['rate'];
+            document.getElementById("euro").innerHTML = data['bpi']['EUR']['symbol'] + " " + data['bpi']['EUR']['rate'];
+            document.getElementById("pound").innerHTML = data['bpi']['GBP']['symbol'] + " " + data['bpi']['GBP']['rate'];
         } else {
             console.log("Error");
         }
